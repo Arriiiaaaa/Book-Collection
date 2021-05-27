@@ -16,6 +16,8 @@ public class Book
     private int quantity;
     private String image;
     private static final String DEFAULT_IMAGE = "book.png";
+    private double locX, locY;
+    
     
     /**
      * Constructor for objects of class Book

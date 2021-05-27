@@ -53,9 +53,12 @@ public class Books
             quantity = UI.askInt("Quantity: ");
         } while (0 > quantity || quantity > MAX_QUANTITY);
         
+        // Add a book image for display in the GUI
+        String imgFileName = UIFileChooser.open("Choose image file: ");
+        
         // Increment the book ID counter and add book to hashmap
         this.currentBookId ++;
-        booksMap.put(currentBookId, new Book(currentBookId, name, author, quantity));
+        booksMap.put(currentBookId, new Book(currentBookId, name, author, quantity, imgFileName));
     }
     
     /**
@@ -64,7 +67,8 @@ public class Books
      */
     public void findBook() {
         int bookId = UI.askInt("Id: "); // finds book on ID - change to title
-        booksMap.get(bookId).getName();
+        booksMap.get(bookId).getName(); // prints out book name
+        booksMap.get(bookId).displayBook(); // Shows book c
     }
     
     /**
